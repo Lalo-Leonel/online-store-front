@@ -8,3 +8,6 @@ header, .alert{
   header, .alert{
     z-index: 100;
   }
+  .ocultar{
+    display: none;
+  }
