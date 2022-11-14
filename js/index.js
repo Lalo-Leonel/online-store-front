@@ -1,6 +1,7 @@
 //Definición de variables
-const url = 'http://localhost:8000/api/products'
-const urlCategories = 'http://localhost:8000/api/categories'
+const hostApi = 'https://backonlinestore.herokuapp.com/'
+const url = hostApi+'api/products'
+const urlCategories = hostApi+'api/categories'
 const items = document.getElementById('items')
 const templateCard = document.getElementById('template-card').content
 const fragment = document.createDocumentFragment()
@@ -60,7 +61,7 @@ fetch(urlCategories)
 inputBuscar.addEventListener('keyup', (e)=>{
     let texto = e.target.value
     valueSearch = texto
-    const urlById = 'http://localhost:8000/api/products/search?name='+texto+'&categoryId='+valueSelect
+    const urlById = hostApi+'api/products/search?name='+texto+'&categoryId='+valueSelect
     fetch(urlById)
     .then(response => response.json())
     .then(data => {
@@ -72,7 +73,7 @@ inputBuscar.addEventListener('keyup', (e)=>{
 select.addEventListener('change', (e)=>{
     let id = e.target.value
     valueSelect = id
-    const urlById = 'http://localhost:8000/api/products/search?name='+valueSearch+'&categoryId='+id
+    const urlById = hostApi+'api/products/search?name='+valueSearch+'&categoryId='+id
     fetch(urlById)
     .then(response => response.json())
     .then(data => {
